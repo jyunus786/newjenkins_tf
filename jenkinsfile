@@ -10,6 +10,7 @@ pipeline{
              createS3Bucket('jenkins123terraform')
              }
              }
+             }
         stage('terraform initialization'){
             steps{
                 sh "terraform init"
