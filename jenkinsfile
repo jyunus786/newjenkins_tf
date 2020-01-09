@@ -2,8 +2,14 @@ pipeline{
     agent any
     environment {
   PATH = "${PATH}:${getTerraformPath()}"
-    }
-    stages{
+        }
+        stages{
+         stage('S3 Create Bucket'){
+         steps{
+             script{
+             createS3Bucket('madhu-tf-1212')
+             }
+             }
         stage('terraform initialization'){
             steps{
                 sh "terraform init"
